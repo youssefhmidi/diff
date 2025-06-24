@@ -11,7 +11,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     match args.len() {
-        1 => println!("you're running diff version {0}.\n\nusage: diff <old_file> <new_file>", VERSION),
+        1 => println!("you're running diff version {0}.\n\nusage: diff <old_file> <new_file> [--json]\nthe --json flag is optional", VERSION),
         3.. => {
             let res_diffs = diff::diff(args[1].as_str(), args[2].as_str());
 
